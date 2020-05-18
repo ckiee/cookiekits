@@ -38,7 +38,7 @@ public class CookieKitsCommand extends BaseCommand implements Listener {
 					continue;
 				kit.items.add(item);
 			}
-			ck.getConfig().getConfigurationSection("kits").set(kit.id, kit);
+			ck.getConfig().getConfigurationSection("kits").set(kit.id.toUpperCase(), kit);
 			ck.saveConfig();
 			p.sendMessage(ChatColor.GREEN + "Saved kit.");
 		} else {
@@ -49,6 +49,7 @@ public class CookieKitsCommand extends BaseCommand implements Listener {
 	@Subcommand("delete")
 	@CommandPermission("cookiekits.admin.delete")
 	public void delete(CommandSender sender, String id) {
+		id = id.toUpperCase();
 		ConfigurationSection sec = ck.getConfig().getConfigurationSection("kits");
 		if (sec.contains(id)) {
 			sec.set(id, null);

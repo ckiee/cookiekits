@@ -25,11 +25,13 @@ public class KitCommand extends BaseCommand implements Listener {
 	public void onDefault(CommandSender sender, @Optional String kitID, @Optional Player p) {
 		if (kitID == null) {
 			sender.sendMessage(ChatColor.GREEN + "Kits: ");
-			ck.getConfig().getConfigurationSection("kits").getKeys(false).forEach(id -> {
-				sender.sendMessage(ChatColor.GREEN + " - " + ChatColor.GOLD + id);
+			ck.getConfig().getConfigurationSection("kits").getValues(false).forEach((index, kit) -> {
+				sender.sendMessage(ChatColor.GREEN + " - " + ChatColor.GOLD + ((Kit) kit).id);
 			});
 			return;
 		}
+
+		kitID = kitID.toUpperCase();
 
 		if (p == null && !(sender instanceof Player)) {
 			sender.sendMessage(ChatColor.RED + "You have to either pass in a player name or execute this as a player.");
