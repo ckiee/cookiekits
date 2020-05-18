@@ -10,7 +10,7 @@ tiny kits plugin for paper 1.15 with only the (very!) bare minimum
 
 ## permissions
 
-`cookiekits.kit.KitNameHere` - for /kit KitNameHere
+`cookiekits.kit.KitNameHere` - for /kit KitNameHere (or /ckit KitNameHere)
 
 `cookiekits.admin.delete` - /ck delete <kitID>
 
