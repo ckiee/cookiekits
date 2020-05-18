@@ -18,4 +18,4 @@ tiny kits plugin for paper 1.15 with only the (very!) bare minimum
 
 ## license
 
-This project is licensed under version 3 of the GNU General Public License. (see LICENSE file)
+This project is licensed under version 3 of the GNU General Public License. (see [LICENSE file](https://github.com/ronthecookie/cookiekits/blob/master/LICENSE))
