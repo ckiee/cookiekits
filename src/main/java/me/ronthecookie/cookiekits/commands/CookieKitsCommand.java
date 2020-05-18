@@ -53,6 +53,7 @@ public class CookieKitsCommand extends BaseCommand implements Listener {
 		if (sec.contains(id)) {
 			sec.set(id, null);
 			ck.saveConfig();
+			sender.sendMessage(ChatColor.GREEN + "Deleted kit");
 		} else {
 			sender.sendMessage(ChatColor.RED + "Kit not found.");
 		}
