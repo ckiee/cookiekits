@@ -1,0 +1,4 @@
+name: CookieKits
+version: ${project.version}
+main: me.ronthecookie.cookiekits.CookieKits
+api-version: 1.15
