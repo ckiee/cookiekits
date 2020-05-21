@@ -36,7 +36,7 @@ public class CookieKitsCommand extends BaseCommand implements Listener {
 			for (ItemStack item : p.getInventory().getContents()) {
 				if (item == null)
 					continue;
-				kit.items.add(item);
+				kit.items.add(item.clone());
 			}
 			ck.getConfig().getConfigurationSection("kits").set(kit.id.toUpperCase(), kit);
 			ck.saveConfig();
