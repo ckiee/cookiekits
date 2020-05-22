@@ -31,15 +31,15 @@ public class KitCommand extends BaseCommand implements Listener {
 			return;
 		}
 
+		if (sender instanceof Player && pName == null)
+			pName = sender.getName();
 		kitID = kitID.toUpperCase();
-
-		Player p = ck.getServer().getPlayer(pName);
-
-		if (p == null && !(sender instanceof Player)) {
-			sender.sendMessage(ChatColor.RED + "You have to either pass in a player name or execute this as a player.");
+		Player p = null;
+		if (pName == null) {
+			sender.sendMessage(ChatColor.RED + "Execute as player or provide player name.");
 			return;
-		} else if (p == null)
-			p = (Player) sender;
+		} else
+			p = ck.getServer().getPlayer(pName);
 
 		if (!ck.getConfig().contains("kits." + kitID)) {
 			sender.sendMessage(ChatColor.RED + "Kit not found.");
