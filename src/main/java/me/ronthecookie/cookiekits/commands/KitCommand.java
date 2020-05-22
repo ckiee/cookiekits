@@ -22,7 +22,7 @@ public class KitCommand extends BaseCommand implements Listener {
 	@Default
 	@Subcommand("give")
 	@CatchUnknown
-	public void onDefault(CommandSender sender, @Optional String kitID, @Optional Player p) {
+	public void onDefault(CommandSender sender, @Optional String kitID, @Optional String pName) {
 		if (kitID == null) {
 			sender.sendMessage(ChatColor.GREEN + "Kits: ");
 			ck.getConfig().getConfigurationSection("kits").getValues(false).forEach((index, kit) -> {
@@ -32,6 +32,8 @@ public class KitCommand extends BaseCommand implements Listener {
 		}
 
 		kitID = kitID.toUpperCase();
+
+		Player p = ck.getServer().getPlayer(pName);
 
 		if (p == null && !(sender instanceof Player)) {
 			sender.sendMessage(ChatColor.RED + "You have to either pass in a player name or execute this as a player.");
