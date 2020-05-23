@@ -46,7 +46,7 @@ public class KitCommand extends BaseCommand implements Listener {
 			return;
 		}
 
-		if (!p.hasPermission("cookiekits.kit." + kitID)) {
+		if (!sender.hasPermission("cookiekits.kit." + kitID)) {
 			sender.sendMessage(ChatColor.RED + "No permission for that kit.");
 			return;
 		}
